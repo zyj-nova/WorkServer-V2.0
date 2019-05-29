@@ -21,7 +21,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class LoginController {
-    private static final String STUDENT_ROLE = "bb63e5f7e0f2ffae845c";
+    private static final String USER_ROLE = "bb63e5f7e0f2ffae845c";
     private static final String ADMIN_ROLE = "6983f953b49c88210cb9";
     @Autowired
     private UserService userService;
@@ -37,6 +37,7 @@ public class LoginController {
                     if (!passwordEncoder.matches(user.getPassword(), u.getPassword())) {
                         throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "用户名或密码错误");
                     }
+
                     Map map = Map.of("uid", u.getId(), "aid", u.getAuthority());
                     // 生成加密token
                     String token = encryptorComponent.encrypt(map);
@@ -44,11 +45,13 @@ public class LoginController {
                     response.setHeader("token", token);
                     String role = null;
                     if (u.getAuthority() == User.USER_AUTHORITY) {
-                        role = STUDENT_ROLE;
+                        role = USER_ROLE;
                     } if (u.getAuthority() == User.ADMIN_AUTHORITY) {
                         role = ADMIN_ROLE;
                     }
                     response.setHeader("role", role);
+                    response.setHeader("username",u.getName());
+                    response.setHeader("id",String.valueOf(u.getId()));
                 }, () -> {
                     throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "用户名或密码错误");
                 });

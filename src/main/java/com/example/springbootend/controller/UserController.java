@@ -14,6 +14,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.rmi.MarshalledObject;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -28,6 +29,11 @@ public class UserController {
     private CourseService courseService;
     @Autowired
     private HomeworkService homeworkService;
+
+    @GetMapping("/user")
+    public Map getMyInfo(@RequestAttribute int uid){
+        return Map.of("user",userService.getUserById(uid));
+    }
 
     /**
      * 仅主页面时，加载全部课程
@@ -77,4 +83,13 @@ public class UserController {
         }
         return Map.of("homeworks", homeworks);
     }
+
+    @PostMapping("/set/user")
+     public Map postUser(@RequestBody User user){
+        int aid = user.getAuthority();
+       String number = user.getNumber();
+        User u = userService.UpdateUser(aid,number);
+        return Map.of("user",u);
+     }
+
 }

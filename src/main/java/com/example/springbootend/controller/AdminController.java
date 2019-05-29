@@ -1,15 +1,15 @@
 package com.example.springbootend.controller;
 
-import com.example.springbootend.entity.Course;
-import com.example.springbootend.entity.Homework;
-import com.example.springbootend.entity.User;
+import com.example.springbootend.entity.*;
 import com.example.springbootend.service.CourseService;
 import com.example.springbootend.service.HomeworkService;
+import com.example.springbootend.service.TaskDetailService;
+import com.example.springbootend.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -21,6 +21,11 @@ public class AdminController {
     @Autowired
     private HomeworkService homeworkService;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private TaskDetailService taskDetailService;
     /**
      * 添加后，将全部课程返回
      * @param course
@@ -40,5 +45,24 @@ public class AdminController {
                             @RequestBody Homework homework) {
         homeworkService.addHomework(homework);
         return Map.of("homeworks", homeworkService.listTeacherHomeworks(cid, uid));
+    }
+
+    @PostMapping("/new")
+    public Map postUser(@RequestBody User user){
+        userService.addUser(user);
+        return Map.of("user",user);
+    }
+
+    @GetMapping("/users")
+    public Map getNonAdminUsers(){
+        List<User> list = userService.listNonAdminUsers();
+        return Map.of("users",list);
+    }
+
+    @PostMapping("/task/{taskid}/reply")
+    public Map postReply(@PathVariable int taskid, @RequestBody Reply reply, @RequestAttribute int uid){
+        log.debug("{}",reply.getComment());
+        TaskDetail detail = taskDetailService.addReply(taskid,uid,reply);
+        return Map.of("taskDetail",detail);
     }
 }
