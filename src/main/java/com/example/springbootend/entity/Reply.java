@@ -10,5 +10,6 @@ import javax.persistence.Id;
 @Data
 public class Reply {
 
+    private String name;
     private String comment;
 }

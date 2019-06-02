@@ -26,6 +26,5 @@ public class CustomizedRespoistoryImpl<T, ID> extends SimpleJpaRepository<T, ID>
         T newt = entityManager.merge(t);
         return newt;
     }
-
-
+    
 }

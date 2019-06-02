@@ -15,10 +15,6 @@ public class User {
     public static final int USER_AUTHORITY = 1;
     public static final int ADMIN_AUTHORITY = 2;
 
-    public static final int JIANGSHI = 1;
-    public static final int FUJIAOSHOU = 2;
-    public static final int JIAOSHOU = 3;
-    public static final int GONGCHENGSHI = 4;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -27,7 +23,7 @@ public class User {
     @Length(max = 11)
     private String phone;
 
-    private int title = 1;
+    private String title;
     @Column(columnDefinition = "TEXT")
     private String introduction;
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

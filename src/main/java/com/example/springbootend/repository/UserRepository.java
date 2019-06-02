@@ -19,8 +19,9 @@ public interface UserRepository extends CustomizedRepoistory<User, Integer> {
 
     @Query("SELECT u FROM User u WHERE u.id = :id")
     User findById(@Param("id") int id);
+//
+//    @Modifying
+//    @Query("update User u set u.authority = :aid where u.id = :id")
+//    int updateAuthority(@Param("aid") Integer aid, @Param("id") Integer uid);
 
-    @Modifying
-    @Query("update User u set u.authority =:authority where u.number =:number")
-    int updateAuthority(@Param("authority") int aid, @Param("number") String number);
 }

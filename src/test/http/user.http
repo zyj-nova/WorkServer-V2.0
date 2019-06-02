@@ -1,0 +1,25 @@
+GET http://localhost:8080/api/user
+token:5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+###
+
+POST http://localhost:8080/api/set/user
+token:5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+  "authority": "2",
+  "number": "1058"
+  }
+
+###
+
+POST http://localhost:8080/api/set/user/authority
+token:5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+  "id": 3
+}
+
+###
