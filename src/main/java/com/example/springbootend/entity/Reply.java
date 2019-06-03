@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Data
 public class Reply {
-
+    private int id;
     private String name;
     private String comment;
 }

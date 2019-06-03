@@ -51,7 +51,7 @@ public class LoginController {
                         role = ADMIN_ROLE;
                     }
                     response.setHeader("role", role);
-                    response.setHeader("username",u.getName());
+
                     response.setHeader("id",String.valueOf(u.getId()));
 
                 }, () -> {
