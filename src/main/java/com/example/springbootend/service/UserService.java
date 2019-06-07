@@ -37,6 +37,11 @@ public class UserService {
         userRepository.save(u);
         return userRepository.refresh(u);
     }
+    //管理员删除用户
+    public User deleteUser(User u){
+        userRepository.delete(u);
+        return u;
+    }
     //列出所有非管理员用户的信息
     public List<User> listNonAdminUsers(){
         List<User> list = userRepository.findAllByUserAuthority(1);

@@ -21,10 +21,17 @@ public class AdminController {
     @Autowired
     private TaskDetailService taskDetailService;
 
+    //添加用户
     @PostMapping("/new")
     public Map postUser(@RequestBody User user){
         userService.addUser(user);
         return Map.of("user",user);
+    }
+    //删除用户
+    @PostMapping("/remove")
+    public Map removeUser(@RequestBody User u){
+        userService.deleteUser(u);
+        return Map.of("user",u);
     }
 
     @GetMapping("/users")
@@ -33,6 +40,7 @@ public class AdminController {
         return Map.of("users",list);
     }
 
+    //发表回复
     @PostMapping("/task/{taskid}/reply")
     public Map postReply(@PathVariable int taskid, @RequestBody Reply reply, @RequestAttribute int uid){
         log.debug("{}",reply.getComment());

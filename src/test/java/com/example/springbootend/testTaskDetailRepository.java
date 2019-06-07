@@ -1,6 +1,7 @@
 package com.example.springbootend;
 
 import com.example.springbootend.entity.Reply;
+import com.example.springbootend.entity.Task;
 import com.example.springbootend.entity.TaskDetail;
 import com.example.springbootend.entity.User;
 import com.example.springbootend.repository.TaskDetailRepository;
@@ -32,7 +33,7 @@ public class testTaskDetailRepository {
     @Test
     @Transactional
     public void testquery(){
-
-
+        int n = dao.queryCompleteNum(7);
+        log.debug("{}",n);
     }
 }

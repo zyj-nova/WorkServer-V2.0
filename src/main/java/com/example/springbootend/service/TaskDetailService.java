@@ -27,15 +27,19 @@ public class TaskDetailService {
     @Autowired
     private UserRepository userRepository;
 
+    //实现：用户发表回复
     public TaskDetail addReply(int taskId, int userId, Reply reply){
         TaskDetail detail = new TaskDetail();
         Task t = taskRepository.findById(taskId).get();
         User u = userRepository.findById(userId);
         detail.setContent(reply.getComment());
+        if(reply.getStatus().equals("1")){
+            detail.setResult("完成");
+        }else{
+            detail.setResult("未完成");
+        }
         detail.setTask(t);
         detail.setUser(u);
-
-        detail.setResult(1);
         taskDetailRepository.save(detail);
         return taskDetailRepository.refresh(detail);
     }
@@ -53,5 +57,8 @@ public class TaskDetailService {
        return replies;
     }
 
+    public List<Reply> getResults(){
+        return null;
+    }
 
 }

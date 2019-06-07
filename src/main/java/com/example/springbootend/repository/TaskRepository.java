@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TaskRepository extends CustomizedRepoistory<Task,Integer>{
     @Modifying
-    @Query("update Task t set t.status = 0 where t.id = :id")
+    @Query("update Task t set t.status = '结束' where t.id = :id")
     int updateTaskStatus(@Param("id") int id);
 
 

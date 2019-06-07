@@ -24,7 +24,7 @@ public class TaskDetail {
     @ManyToOne(fetch = FetchType.LAZY)
     private Task task;
     //完成/未按时完成
-    private int result;
+    private String result;
     //回复的内容
     private String content;
     //完成时间
