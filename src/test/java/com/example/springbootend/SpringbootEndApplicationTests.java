@@ -32,8 +32,7 @@ public class SpringbootEndApplicationTests {
     @Autowired
     private EncryptorComponent encryptorComponent;
 
-    @Autowired
-    private UserRepository userRepository;
+
     @Test
     public void contextLoads() {
 
@@ -69,6 +68,13 @@ public class SpringbootEndApplicationTests {
         user.setId(4);
         user.setName("吴镇宇");
         userService.updateUser(user);
+    }
+
+    @Test
+    @Transactional
+    public void test4(){
+        User u = userService.getUser("1001");
+        log.debug("{}",u.getName());
     }
 
 }
