@@ -54,4 +54,10 @@ public class ExamServiceTest {
         List<User> list = examService.getRecommendTeachers();
         System.out.println(list.size());
     }
+
+    @Test
+    public void test4(){
+
+
+    }
 }

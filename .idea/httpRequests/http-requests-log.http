@@ -1,0 +1,645 @@
+POST http://localhost:8080/api/exam//update/add/teacher
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "tids": [
+    2,
+    7
+  ],
+  "exam": {
+    "id": "2",
+    "deadTime": "2019-06-18 11:00",
+    "startTime": "2019-06-18 09:00",
+    "status": "未分配",
+    "numOfPerson":2,
+    "place": "锦绣楼4楼403",
+    "course": {
+      "id": 4,
+      "name": "高等数学"
+    }
+  }
+}
+
+<> 2019-06-11T100430.200.json
+
+###
+
+GET http://localhost:8080/api/exam/list/teachers
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-09T050643.200.json
+
+###
+
+GET http://localhost:8080/api/exam/list/teachers
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-09T044834.500.json
+
+###
+
+GET http://localhost:8080/api/exam/list/teachers
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-09T032349.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/close
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+"id": 7
+}
+
+<> 2019-06-06T091122.200.json
+
+###
+
+GET http://localhost:8080/api/taskdetail/get/complete
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-05T104556.200.json
+
+###
+
+GET http://localhost:8080/api/taskdetail/get/complete
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+
+<> 2019-06-05T104530.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/close
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+"id": 1
+}
+
+<> 2019-06-04T112713.200.json
+
+###
+
+POST http://localhost:8080/api/admin/new
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+ "number": "1059",
+  "title": 1,
+  "name": "zjl",
+  "introduction": "无",
+  "authority": 1,
+  "phone": "13133258963",
+  "password": "1059"
+
+}
+
+<> 2019-06-03T042958.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/6/reply
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+    "comment": "HELLO"
+}
+
+<> 2019-06-03T025500.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/9/reply
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+    "comment": "HELLO"
+}
+
+<> 2019-06-03T025444.500.json
+
+###
+
+GET http://localhost:8080/api/taskdetail/get/2
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-03T025344.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+    "comment": "HELLO"
+}
+
+###
+
+GET http://localhost:8080/api/taskdetail/get/2
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-02T070807.200.json
+
+###
+
+GET http://localhost:8080/api/taskdetail/get/1
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-02T070800.200.json
+
+###
+
+GET http://localhost:8080/api/taskdetail/get/2
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-06-02T070749.200.json
+
+###
+
+POST http://localhost:8080/api/set/user/authority
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+  "id": 3
+}
+
+<> 2019-05-31T115802.500.json
+
+###
+
+POST http://localhost:8080/api/set/user/authority
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+  "id": 3
+}
+
+<> 2019-05-31T115428.500.json
+
+###
+
+POST http://localhost:8080/api/set/user
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+  "authority": "2",
+  "number": "1058"
+  }
+
+<> 2019-05-30T083443.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+
+{
+  "number": "9999",
+  "password": "123456"
+}
+
+###
+
+GET http://localhost:8080/api/user
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+
+<> 2019-05-29T092843.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: 5070708a7940d688ce9cb34f5dab8424954fa0e0ea500e46610d03d0c70131772b4dc2020c7f5f98a9791ea71ee24149
+Content-Type: application/json
+
+{
+    "comment": "h"
+}
+
+<> 2019-05-29T085835.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/2/reply
+token: 8968dc9bf2e2dd479aea6e8e702d04a5320040b72e35a58e763d35cf06749c398068575d12e1b57f17d7dbfe232cb956
+Content-Type: application/json
+
+{
+    "comment": "hello"
+}
+
+<> 2019-05-29T085625.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/2/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+    "comment": "hello"
+}
+
+<> 2019-05-29T084716.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/2/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+{:
+    "comment": "hello"
+}:
+
+<> 2019-05-29T084658.400.html
+
+###
+
+POST http://localhost:8080/api/admin/task/2/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+uid: 1
+{:
+    "comment": "hello"
+}:
+
+<> 2019-05-29T084637.400.html
+
+###
+
+POST http://localhost:8080/api/admin/task/2/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+    "comment": "hello"
+}
+
+<> 2019-05-29T084219.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/2/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "reply": {
+    "comment": "hello"
+  }
+}
+
+<> 2019-05-29T084148.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/2/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "reply": {
+    "comment": "hello"
+  }
+}
+
+<> 2019-05-29T084037.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "reply": {
+    "comment": "hello"
+  },
+  "user": {
+   "id": 1
+  }
+}
+
+<> 2019-05-29T083829.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "reply": {
+    "comment": "hello"
+  },
+  "user": {
+   "id": 1
+  }
+}
+
+<> 2019-05-29T082655.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "reply": {
+    "comment": "hello"
+  },
+  "user": {
+   "id": 1
+  }
+}
+
+<> 2019-05-29T082648.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user":null
+}
+
+<> 2019-05-29T081730.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user":null
+}
+
+<> 2019-05-29T081726.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  }
+}
+
+<> 2019-05-29T081647.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  },
+  "reply": {
+     "comment": "hello"
+  }
+}
+
+<> 2019-05-29T081622.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  },
+  "reply": {
+     "comment": "hello"
+  }
+}
+
+<> 2019-05-29T081342.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  }
+}
+
+<> 2019-05-29T080905.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  },
+  "reply": {
+  "comment": "hello"
+  }
+}
+
+<> 2019-05-29T080835.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  },
+  "reply": {
+  "comment": "hello"
+  }
+}
+
+<> 2019-05-29T080812.415.json
+
+###
+
+POST http://localhost:8080/api/admin/task/add
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "title": "周三下午开党员大会",
+  "content": "成栋10楼会议室1025召开大会",
+  "deadLineTime": "2019-05-28 19:25",
+  "status": 1
+}
+
+<> 2019-05-29T080432.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  }
+}
+
+<> 2019-05-29T075905.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+"comment": "hello wolrd"
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  }
+}
+
+<> 2019-05-29T075819.400.html
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+comment: "hello wolrd"
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  }
+}
+
+<> 2019-05-29T075804.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  },
+  "reply": {
+     "comment": "hello world"
+  }
+
+}
+
+<> 2019-05-29T074945.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "4"
+  },
+  "reply": {
+     "comment": "收到"
+  }
+
+}
+
+<> 2019-05-29T073406.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "3"
+  },
+  "reply": {
+     "comment": "收到"
+  }
+
+}
+
+<> 2019-05-29T073342.400.json
+
+###
+
+POST http://localhost:8080/api/admin/task/1/reply
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "user": {
+     "id": "3"
+  },
+  "conment": "shoudao"
+
+}
+
+<> 2019-05-29T073102.400.json
+
+###
+
+GET http://localhost:8080/api/admin/task/list
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+
+<> 2019-05-28T074103.200.json
+
+###
+
+POST http://localhost:8080/api/admin/task/update
+token: db970a208cc3f13c0f13cdbabff5fab5adf85a11e475b8b83350376aaf0e6d7caab1bf6c6236b257c4ee7a78ffe92558
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "已标题",
+  "content": "内容也改了",
+  "deadLineTime": "2019-05-28 19:35",
+  "status": 1
+}
+
+<> 2019-05-28T073743.200.json
+
+###
+

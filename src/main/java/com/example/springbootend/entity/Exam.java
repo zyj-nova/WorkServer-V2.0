@@ -26,7 +26,7 @@ public class Exam {
 
     private String place;
 
-    private int status = -1;
+    private String status;
 
     @Column(columnDefinition = "DATETIME NOT NULL " +
             "DEFAULT CURRENT_TIMESTAMP",

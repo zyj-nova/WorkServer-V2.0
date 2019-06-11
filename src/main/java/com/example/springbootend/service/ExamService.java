@@ -1,9 +1,6 @@
 package com.example.springbootend.service;
 
-import com.example.springbootend.entity.Exam;
-import com.example.springbootend.entity.ExamDetail;
-import com.example.springbootend.entity.SortTeacher;
-import com.example.springbootend.entity.User;
+import com.example.springbootend.entity.*;
 import com.example.springbootend.repository.ExamDetailRepository;
 import com.example.springbootend.repository.ExamRepository;
 import com.example.springbootend.repository.UserRepository;
@@ -28,6 +25,8 @@ public class ExamService {
 
     @Autowired
     private UserRepository userRepository;
+
+
 
     // 同一时间同一地点不允许有 2 个监考；
     // 没有冲突 == false
@@ -62,38 +61,6 @@ public class ExamService {
 
     public List<Exam> listExams() {
         return examRepository.findAll();
-    }
-
-    public int getExamTimesByTeacher(User teacher) {
-        List<Exam> exams = examDetailRepository.findByTeacher(teacher.getId());
-        if (exams.size() == 1)
-            return 1;
-        if (exams.size() == 0)
-            return 0;
-        exams.sort(new Comparator<Exam>() {
-            @Override
-            public int compare(Exam o1, Exam o2) {
-                if (o1.getStartTime().toEpochSecond(ZoneOffset.of("+8"))
-                        < o2.getStartTime().toEpochSecond(ZoneOffset.of("+8"))) {
-                    return 1;
-                } else if (o1.getStartTime().toEpochSecond(ZoneOffset.of("+8"))
-                        == o2.getStartTime().toEpochSecond(ZoneOffset.of("+8"))) {
-                    return 0;
-                } else {
-                    return -1;
-                }
-            }
-        });
-        int count = 0;
-        for (Exam e : exams) {
-            for (Exam e2 : exams) {
-                if (checkTimeConflict(e, e2)) {
-                    //出现冲突
-                    count++;
-                }
-            }
-        }
-        return count;
     }
 
     //获取推荐老师列表
@@ -138,16 +105,14 @@ public class ExamService {
         return lists;
     }
 
-    public int count(int tid) {
-        return examDetailRepository.times(tid);
+    //更新监考课程
+    public int updateExamCourse(int eid, Lession lession){
+
+        return examRepository.updateExam(lession,eid);
     }
-
-    //更新指定id的监考数据
-    public Exam updateExam(Exam newExam) {
-        Exam exam = examRepository.merge(newExam);
-        examRepository.save(exam);
-        return examRepository.refresh(newExam);
-    }
-
-
+//
+//    //更新监考的状态,是否分配了老师
+//    public void updateExamStatus(int eid){
+//        examRepository.updateStatus("已分配",eid);
+//    }
 }

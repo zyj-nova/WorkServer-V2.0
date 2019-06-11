@@ -37,20 +37,15 @@ public class ExamDetailController {
     //分配指定监考的监考人员
     @PostMapping("/update/add/teacher")
     public Map postExamTeachers(@RequestBody Examing examing){
-        List<Integer> ids = examing.getTids();
-        Exam exam = examing.getExam();
-        System.out.println(ids.size());
-        for(Integer u:ids){
-            User user = userService.getUserById(u);
-            if (examService.getExamTimesByTeacher(user) >= 2){
-                throw new RuntimeException();
-            }
-            ExamDetail detail = new ExamDetail();
-            detail.setExam(exam);
-            detail.setTeacher(user);
-            examDetailService.addExamDetail(detail);
-        }
-        return Map.of();
+       boolean flag = examDetailService.addExamTeacher(examing);//true表示有冲突
+        return Map.of("flag",flag);
+    }
+
+    //删除监考详细信息
+    @PostMapping("/delete/examdetail")
+    public Map deleteExamDetail(@RequestBody ExamDetail examDetail){
+        examDetailService.deleteExamDetail(examDetail);
+        return Map.of("examDEtail",examDetail);
     }
 
 }
