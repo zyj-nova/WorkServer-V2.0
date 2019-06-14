@@ -1,9 +1,6 @@
 package com.example.springbootend.service;
 
-import com.example.springbootend.entity.Reply;
-import com.example.springbootend.entity.Task;
-import com.example.springbootend.entity.TaskDetail;
-import com.example.springbootend.entity.User;
+import com.example.springbootend.entity.*;
 import com.example.springbootend.repository.TaskDetailRepository;
 import com.example.springbootend.repository.TaskRepository;
 import com.example.springbootend.repository.UserRepository;
@@ -33,11 +30,7 @@ public class TaskDetailService {
         Task t = taskRepository.findById(taskId).get();
         User u = userRepository.findById(userId);
         detail.setContent(reply.getComment());
-        if(reply.getStatus().equals("1")){
-            detail.setResult("完成");
-        }else{
-            detail.setResult("未完成");
-        }
+       detail.setResult(reply.getStatus());
         detail.setTask(t);
         detail.setUser(u);
         taskDetailRepository.save(detail);
@@ -57,8 +50,21 @@ public class TaskDetailService {
        return replies;
     }
 
-    public List<Reply> getResults(){
-        return null;
+    public List<CompleteResult> getResults(){
+        List<CompleteResult> lists = new ArrayList<>();
+        List<Task> tasks = taskDetailRepository.queryTask();
+        List<TaskDetail> details = taskDetailRepository.queryAllDetail();
+        List<User> users = taskDetailRepository.queryAllUsers();
+        System.out.println(tasks.size() + " " + details.size());
+        for (int i = 0; i < tasks.size(); i++){
+            CompleteResult result = new CompleteResult();
+            result.setTaskname(tasks.get(i).getTitle());
+            result.setResult(details.get(i).getResult());
+            result.setUno(users.get(i).getNumber());
+            result.setUsername(users.get(i).getName());
+            lists.add(result);
+        }
+        return lists;
     }
 
 }

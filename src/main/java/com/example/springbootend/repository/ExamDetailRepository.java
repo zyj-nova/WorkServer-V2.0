@@ -3,6 +3,7 @@ package com.example.springbootend.repository;
 import com.example.springbootend.entity.Exam;
 import com.example.springbootend.entity.ExamDetail;
 import com.example.springbootend.entity.User;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -20,4 +21,9 @@ public interface ExamDetailRepository extends CustomizedRepoistory<ExamDetail,In
 
     @Query("select count(detail.id) from ExamDetail detail where detail.teacher.id= :tid group by detail.teacher.id")
     int times(@Param("tid") int tid);
+
+    //根据监考的id删除监考详细信息
+    @Modifying
+    @Query("delete from ExamDetail detail where detail.exam.id = :eid")
+    int deleteExamTeachersByExam(@Param("eid") int eid);
 }

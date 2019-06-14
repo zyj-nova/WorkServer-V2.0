@@ -21,5 +21,10 @@ public class TaskDetailController {
         return Map.of("tasks",tasks);
     }
 
+    @GetMapping("/get/result")
+    public Map getAllResult(){
+        return Map.of("results",taskDetailService.getResults());
+    }
+
 
 }

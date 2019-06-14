@@ -40,12 +40,29 @@ public class ExamDetailController {
        boolean flag = examDetailService.addExamTeacher(examing);//true表示有冲突
         return Map.of("flag",flag);
     }
+//
+//    //删除监考详细信息
+//    @PostMapping("/delete/examdetail")
+//    public Map deleteExamDetail(@RequestBody ExamDetail examDetail){
+//        examDetailService.deleteExamDetail(examDetail);
+//        return Map.of("examDEtail",examDetail);
+//    }
 
-    //删除监考详细信息
+    @GetMapping("/list/my/exam")
+    public Map getTeacherExam(@RequestAttribute int uid){
+        return Map.of("myexams",examDetailService.listTeacherExam(uid));
+    }
+
+    @PostMapping("/get/teachers")
+    public Map getExamTeachers(@RequestBody Exam exam){
+        return Map.of("teachers",examDetailService.listExamTeacher(exam));
+    }
+
+    //删除该场监考的教师
     @PostMapping("/delete/examdetail")
-    public Map deleteExamDetail(@RequestBody ExamDetail examDetail){
-        examDetailService.deleteExamDetail(examDetail);
-        return Map.of("examDEtail",examDetail);
+    public Map deleteExamTEachers(@RequestBody Exam exam){
+        examDetailService.deleteExamDetail(exam);
+    return Map.of();
     }
 
 }

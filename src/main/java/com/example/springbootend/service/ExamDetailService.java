@@ -26,6 +26,7 @@ public class ExamDetailService {
     @Autowired
     private UserService userService;
 
+    //添加监考信息
     public ExamDetail addExamDetail(ExamDetail detail){
         examDetailRepository.save(detail);
         return examDetailRepository.refresh(detail);
@@ -36,9 +37,10 @@ public class ExamDetailService {
     }
 
     //删除监考详细信息，
-    public ExamDetail deleteExamDetail(ExamDetail examDetail){
-        examDetailRepository.delete(examDetail);
-        return examDetail;
+    public int deleteExamDetail(Exam exam){
+        examRepository.updateStatus("未分配",exam.getId());
+        examDetailRepository.deleteExamTeachersByExam(exam.getId());
+        return 1;
     }
     // true = 冲突
     private boolean checkTimeConflict(Exam e1, Exam e2) {
@@ -79,5 +81,10 @@ public class ExamDetailService {
         }
         //不冲突返回false
         return flag;
+    }
+
+    //获取指定教师的监考信息
+    public List<Exam> listTeacherExam(int uid){
+        return examDetailRepository.findByTeacher(uid);
     }
 }

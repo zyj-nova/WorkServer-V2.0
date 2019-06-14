@@ -36,4 +36,9 @@ public class testTaskDetailRepository {
         log.debug("{}",n);
     }
 
+    @Test
+    public void test4(){
+
+    }
+
 }
