@@ -105,10 +105,9 @@ public class ExamService {
         return lists;
     }
 
-    //更新监考课程
-    public int updateExamCourse(int eid, Lession lession){
-
-        return examRepository.updateExam(lession,eid);
+    //删除监考
+    public void deleteExam(Exam exam){
+        examRepository.delete(exam);
     }
 //
 //    //更新监考的状态,是否分配了老师

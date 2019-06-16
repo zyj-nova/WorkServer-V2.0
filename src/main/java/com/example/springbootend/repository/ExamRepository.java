@@ -2,6 +2,7 @@ package com.example.springbootend.repository;
 
 import com.example.springbootend.entity.Exam;
 import com.example.springbootend.entity.Lession;
+import com.example.springbootend.entity.User;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

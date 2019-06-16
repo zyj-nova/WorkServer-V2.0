@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Data
@@ -19,6 +20,9 @@ public class Task {
 
     //任务状态,方便管理员修改任务状态
     private String status;
+
+    @OneToMany(mappedBy = "task",cascade = CascadeType.REMOVE)
+    private List<TaskDetail> details;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime deadLineTime;

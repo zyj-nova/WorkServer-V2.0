@@ -28,6 +28,10 @@ public class ExamController {
         return Map.of("exams",examService.listExams());
     }
 
-
+    @PostMapping("/admin/delete")
+    public Map deleteExam(@RequestBody Exam exam){
+        examService.deleteExam(exam);
+        return Map.of();
+    }
 
 }

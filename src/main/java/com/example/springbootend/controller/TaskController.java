@@ -47,4 +47,11 @@ public class TaskController {
         return Map.of("task",task);
     }
 
+    //删除任务
+    @PostMapping("/delete")
+    public Map deleteTask(@RequestBody Task task){
+        Task t = taskService.deleteTask(task);
+        return Map.of("task",t);
+    }
+
 }
