@@ -34,12 +34,23 @@ public class AdminController {
         return Map.of("user",u);
     }
 
+    //更新用户密码
+    @PostMapping("/reset/pass")
+    public Map resetPass(@RequestBody User user){
+        int u = userService.resetUserPass(user);
+        return Map.of("user",u);
+    }
     @GetMapping("/users")
     public Map getNonAdminUsers(){
         List<User> list = userService.listNonAdminUsers();
         return Map.of("users",list);
     }
 
+    @GetMapping("/adminusers")
+    public Map getAdminUsers(){
+        List<User> list = userService.listAdminUsers();
+        return Map.of("users",list);
+    }
     //发表回复
     @PostMapping("/task/{taskid}/reply")
     public Map postReply(@PathVariable int taskid, @RequestBody Reply reply, @RequestAttribute int uid){

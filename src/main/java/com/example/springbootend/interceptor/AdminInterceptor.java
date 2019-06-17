@@ -19,7 +19,7 @@ public class AdminInterceptor implements HandlerInterceptor {
          * login拦截器已经将权限id注入request attribute，因此可直接取出，判断
          */
         int aid = (int) request.getAttribute("aid");
-        if (aid != User.ADMIN_AUTHORITY) {
+        if (aid != User.ADMIN_AUTHORITY || aid != User.SUPER_ADMIN) {
             throw  new ResponseStatusException(HttpStatus.FORBIDDEN, "无权限");
         }
         return true;

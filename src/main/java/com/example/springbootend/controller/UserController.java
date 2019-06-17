@@ -41,4 +41,16 @@ public class UserController {
         return Map.of("user",u);
     }
 
+    @PostMapping("/get/pass")
+    public Map validOldPass(@RequestBody User user){
+        boolean flag = userService.validPass(user);
+        return Map.of("flag",flag);
+    }
+
+    @PostMapping("/set/user/cancel")
+    public Map updateNoAuthority(@RequestBody User user){
+        User u = userService.UpdateUserAuthority(1,user.getId());
+        return Map.of("user",u);
+    }
+
 }

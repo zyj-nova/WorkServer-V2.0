@@ -49,6 +49,7 @@ public class SpringbootEndApplicationTests {
         String password = "123456";
         String code = passwordEncoder.encode(password);
         String code2 = passwordEncoder.encode(password);
+        System.out.println(passwordEncoder.matches(password,code));
        // $2a$10$4glywfDErIIfG/QPuwQ1G.M7jZSCdHXZOWY1wQQrNS9NByo7WN/hu,
         // $2a$10$wbNsnag5x7anTkAWIhJ4vuNQyG7kPTtRwqbR2I9pikvAfNjyCfIee
 

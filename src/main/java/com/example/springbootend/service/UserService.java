@@ -47,6 +47,11 @@ public class UserService {
         List<User> list = userRepository.findAllByUserAuthority(1);
         return list;
     }
+    //列出所有管理员信息
+    public List<User> listAdminUsers(){
+        List<User> list = userRepository.findAllByUserAuthority(2);
+        return list;
+    }
 
     //管理员授权普通用户为管理员 /settings/
     public User UpdateUserAuthority(int aid, int uid){
@@ -67,6 +72,17 @@ public class UserService {
        user.setNumber(u.getNumber());
        return user;
     }
+    //管理员重置密码
+    public int resetUserPass(User user){
+        User u = userRepository.findById(user.getId());
+        String pass = passwordEncoder.encode(user.getPassword());
+        return userRepository.updatePassword(pass,u.getId());
+    }
 
+    //验证密码
+    public boolean validPass(User user){
+        String pass = userRepository.findById(user.getId()).getPassword();
+        return passwordEncoder.matches(user.getPassword(),pass);
+    }
 
 }

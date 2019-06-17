@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 public class User {
     public static final int USER_AUTHORITY = 1;
     public static final int ADMIN_AUTHORITY = 2;
-
+    public static final int SUPER_ADMIN  = 3;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;

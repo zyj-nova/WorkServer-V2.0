@@ -19,6 +19,10 @@ public interface UserRepository extends CustomizedRepoistory<User, Integer> {
 
     @Query("SELECT u FROM User u WHERE u.id = :id")
     User findById(@Param("id") int id);
+
+    @Modifying
+    @Query("update User u set u.password =:pass where u.id =:uid")
+    int updatePassword(@Param("pass") String password,@Param("uid") int uid);
 //
 //    @Modifying
 //    @Query("update User u set u.authority = :aid where u.id = :id")
