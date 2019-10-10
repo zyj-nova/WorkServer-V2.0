@@ -23,6 +23,7 @@ public class SpringbootEndApplication {
         TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));
     }
     public static void main(String[] args) {
+
         SpringApplication.run(SpringbootEndApplication.class, args);
     }
 
